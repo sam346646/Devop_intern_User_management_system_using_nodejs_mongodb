@@ -1,0 +1,164 @@
+:root {
+    --dark: #000011;
+    --light: #d8d8d8;
+    --border: #a7a5a5;
+    --border-btn: #858585;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* It will adjust the padding and margin to the width and height of specified div no increase the width and height */
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    /* To adjust to div size nowrap will shrink 4 elements to one div */
+}
+
+.justify-between {
+    justify-content: space-between;
+    /* around,evenly,flex-start..*/
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-shadow {
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+    /* 1-horizontal 2-vertical offset,3-(optional)blur 4-color(default:text)*/
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.inline {
+    display: inline-block;
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav {
+    background-color: #06d6a0;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#site-main {
+    margin-top: 6em;
+}
+
+#site-main .container .box-nav {
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
+#sitemain .container form {
+    margin: 2em 0;
+}
+
+table {
+    border-spacing: 0px;
+    /* To remove border */
+    width: 100%;
+}
+
+.table td,
+.table th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.table td>a.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0.2em;
+}
+
+.thead-dark {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+table tbody tr:hover {
+    background-color: #06d6a0;
+}
+
+.table tr:hover td>a {
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+/* add user */
+.form-title{
+    margin-top: 2em;
+}
+.form-title>h2{
+    padding:.5em 0;
+}
+.new_user{
+    max-width:786px;
+    margin:auto;
+}
+
+#update_user .form-group,#add_user .form-group{
+    margin:.4em 0;
+}
+#update_user .form-group input[type=text],
+#add_user .form-group input[type=text]{
+    width:100%;
+    padding:.6em 1em;
+    margin:.5em 0;
+    border:1px solid var(--border);
+    font-size:1em;
+    border-radius:.2em;
+}
+#update_user .form-group .radio,
+#add_user .form-group .radio{
+    margin:1em 2em;
+}
+.btn{
+    background-color: #06d6a0;
+    width:100%;
+    padding:.9em 10em;
+    border:none;
+    border-radius:5px;
+}
+
