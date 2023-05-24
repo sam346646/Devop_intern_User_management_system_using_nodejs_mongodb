@@ -10,9 +10,13 @@ const bodyparser=require("body-parser");
 
 dotenv.config({path:'config.env'});
 const PORT=process.env.PORT||8080;
+const connectdb=require('./server/database/connection');
 
 //log request
 app.use(morgan('tiny'));
+
+//mongodb connection
+connectdb();
 
 //parse request to body-parser
 app.use(bodyparser.urlencoded({extended:true}));
@@ -26,12 +30,8 @@ app.use('/css',express.static(path.resolve(__dirname,"assets/css"))); //path.res
 app.use('/img',express.static(path.resolve(__dirname,"assets/img")));
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")));
 
-app.get('/',(req,res)=>{     // '/' root
-    // res.send("CRUD Application"); --> To display
-    res.render("index"); //to render index.ejs in browser
-});
-
-
+//load differnt router
+app.use('/',require('./server/routes/router')); //need to specify the last file also
 
 app.listen(PORT,()=>{
     console.log(`Server is running on http://localhost:${PORT}`);
