@@ -9,7 +9,6 @@ $("#update_user").submit(function (event) {
     })
     let searchParams = new URLSearchParams(window.location.search); 
     let id = searchParams.get('id')
-    data['id']=id;
 
     var request = {
         "url": `http://localhost:3000/api/users/${id}`,
@@ -17,7 +16,7 @@ $("#update_user").submit(function (event) {
         "data": data
     }
 
-    if(confirm("Do you really wan to update this record?")){
+    if(confirm("Do you really want to update this record?")){
         $.ajax(request).done(function (response) {
             location.replace('/');
         })
